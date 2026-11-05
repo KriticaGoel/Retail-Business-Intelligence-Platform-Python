@@ -68,15 +68,16 @@ retail-business-intelligence/
 ```
 
 Tools
-Tool	Purpose
-Python 3.12+	Programming
-VS Code	Development
-Jupyter Notebook	Experimenting with NumPy/Pandas
-Git and GitHub	Version control
-NumPy	Numerical calculations
-Pandas	Data processing
-Matplotlib	Visualization
-Seaborn	Statistical visualization
+|Tool|	Purpose|
+|--|--|
+|Python 3.12+|	Programming|
+|VS Code|	Development|
+|Jupyter Notebook|	Experimenting with NumPy/Pandas|
+|Git and GitHub|	Version control|
+|NumPy|	Numerical calculations|
+|Pandas|	Data processing|
+|Matplotlib|	Visualization|
+|Seaborn|	Statistical visualization|
 
 
 Installing library
