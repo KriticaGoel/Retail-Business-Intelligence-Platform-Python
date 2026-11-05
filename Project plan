@@ -1,0 +1,250 @@
+Day 1 – Python foundations and data structures
+Foundation
+
+Topics
+- Variables, data types, type casting.
+- Operators, conditions, loops.
+- Strings and string methods.
+- Lists, tuples, sets and dictionaries.
+- Mutable vs immutable objects.
+- Shallow copy vs deep copy.
+- List and dictionary comprehensions.
+Project assignment
+
+Create a sample retail dataset using Python collections.
+- Store product information.
+- Store customer details.
+- Store order information.
+- Calculate total order value.
+- Find the most expensive product.
+Deliverable: A Python-based retail data generator using lists and dictionaries.
+
+Day 2 – Functions, OOP and exception handling
+Core Python
+
+Topics
+- Functions, parameters, return values.
+- Lambda, map, filter and zip.
+- *args and **kwargs.
+- Classes and objects.
+- Constructors and instance variables.
+- Encapsulation and inheritance.
+- Polymorphism and abstraction.
+- Composition vs inheritance.
+- Exception handling and custom exceptions.
+- Modules and packages.
+Project assignment
+
+Design the initial application classes:
+- Product
+- Customer
+- Order
+- OrderItem
+- Inventory
+- RetailAnalytics
+Implement methods for adding products, creating orders and calculating order totals.
+
+Deliverable: Object-oriented retail management foundation.
+
+Day 3 – NumPy fundamentals
+Data processing
+
+Topics
+- NumPy arrays and ndarray.
+- Python lists vs NumPy arrays.
+- Array dimensions, shape, size and dtype.
+- Indexing and slicing.
+- Reshaping arrays.
+- Mathematical operations.
+- Broadcasting.
+- Vectorization.
+- Aggregation: sum, mean, min, max, median.
+- Boolean masking.
+- Random number generation.
+Project assignment
+
+Use NumPy to calculate:
+- Total revenue.
+- Average sales.
+- Maximum and minimum sales.
+- Product-wise sales performance.
+- Discount calculations.
+- Profit margins.
+Compare normal Python loops against NumPy vectorized operations.
+
+Deliverable: NumPy-powered sales calculation engine.
+
+Day 4 – Pandas fundamentals
+Data analysis
+
+Topics
+- Series and DataFrames.
+- Reading CSV and Excel files.
+- DataFrame creation.
+- head(), tail(), info(), describe().
+- Selecting columns and rows.
+- loc and iloc.
+- Filtering and sorting.
+- Adding and deleting columns.
+- Handling missing values.
+- Removing duplicates.
+- Data type conversion.
+Project assignment
+
+Load retail datasets and clean them.
+
+Example datasets:
+- Products
+- Customers
+- Orders
+- Order details
+- Inventory
+Deliverable: Cleaned retail datasets ready for analysis.
+
+Day 5 – Advanced Pandas and data transformation
+Data engineering
+
+Topics
+- groupby().
+- agg() and transform().
+- merge(), join() and concat().
+- Pivot tables and cross-tabulation.
+- apply() and map().
+- Date/time operations.
+- String operations.
+- Rolling averages.
+- Ranking and cumulative calculations.
+- Exporting data to CSV and Excel.
+Project assignment
+
+Implement business analytics:
+- Revenue by category.
+- Sales by region.
+- Monthly sales trends.
+- Top 10 products.
+- Top 10 customers.
+- Average order value.
+- Repeat customer analysis.
+Deliverable: Retail data analysis engine.
+
+Day 6 – Matplotlib
+Visualization
+
+Topics
+- Figure and axes.
+- Line charts.
+- Bar charts.
+- Pie and donut charts.
+- Histograms.
+- Scatter plots.
+- Subplots.
+- Titles, labels, legends.
+- Annotations and formatting.
+- Saving charts as image files.
+Project assignment
+
+Create visual reports for:
+- Monthly revenue.
+- Category-wise revenue.
+- Product sales comparison.
+- Regional performance.
+- Order value distribution.
+Deliverable: First set of business reports.
+
+Day 7 – Seaborn and advanced visualization
+Visualization
+
+Topics
+- Seaborn fundamentals.
+- Histogram and KDE plots.
+- Boxplots and violin plots.
+- Count plots.
+- Heatmaps.
+- Pair plots.
+- Scatter and regression plots.
+- Categorical comparisons.
+- Correlation analysis.
+- Choosing the right chart for business questions.
+Project assignment
+
+Create advanced visualizations:
+- Product price vs sales correlation.
+- Monthly sales heatmap.
+- Customer spending distribution.
+- Category-wise order distribution.
+- Identify sales outliers.
+Deliverable: Advanced retail analytics visualizations.
+
+Day 8 – Business intelligence and KPI engine
+Business logic
+
+Topics
+- Business KPI design.
+- Revenue vs profit.
+- Gross profit margin.
+- Average order value (AOV).
+- Customer lifetime value basics.
+- Customer segmentation.
+- Inventory turnover.
+- Stock replenishment.
+- Month-over-month growth.
+- Year-over-year analysis (where data permits).
+Project assignment
+
+Develop a reusable KPI engine using Python OOP and Pandas.
+
+It should answer:
+- What are our best-performing products?
+- Which categories are losing money?
+- Which customers are high-value?
+- Which products require restocking?
+- Which regions are underperforming?
+Deliverable: Business decision-making engine.
+
+Day 9 – Integration and application development
+Integration
+
+Topics
+- Project folder structure.
+- Modular Python development.
+- Integrating NumPy, Pandas and OOP.
+- Exception handling in application workflows.
+- Logging basics.
+- Configuration management.
+- File handling and report generation.
+- Writing reusable functions.
+- Unit testing basics using unittest.
+Project assignment
+
+Integrate all modules into one application.
+
+Expected workflow:
+1. Load retail data.
+2. Validate and clean the data.
+3. Perform calculations.
+4. Generate KPIs.
+5. Generate visualizations.
+6. Export reports.
+Deliverable: Working end-to-end retail BI application.
+
+Day 10 – Final project and technical evaluation
+Final delivery
+
+Topics
+- End-to-end debugging.
+- Performance improvements.
+- Code refactoring.
+- OOP design review.
+- Data validation.
+- Documentation.
+- GitHub project presentation.
+Final assignment
+
+Run the application using a new retail dataset and generate:
+- Sales performance report.
+- Product performance report.
+- Customer analysis report.
+- Inventory report.
+- Executive summary.
+- Visual dashboard/report pack.
+Deliverable: Complete Retail Business Intelligence Platform.
