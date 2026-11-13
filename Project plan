@@ -9,6 +9,7 @@ Topics
 - Mutable vs immutable objects.
 - Shallow copy vs deep copy.
 - List and dictionary comprehensions.
+  
 Project assignment
 
 Create a sample retail dataset using Python collections.

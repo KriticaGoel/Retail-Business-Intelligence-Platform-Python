@@ -81,4 +81,15 @@ Tools
 
 
 Installing library
+
 pip install numpy pandas matplotlib seaborn openpyxl jupyter
+
+Dataset
+
+|File|	Records|	Purpose|
+|--|--|--|
+|transactions.csv|	12,003|	Sales transactions|
+|products.csv	|25	|Product catalogue|
+|customers.csv|	600	|Customer information|
+|stores.csv	|8|	Store information|
+|calendar.csv|	731|	Date dimension|
