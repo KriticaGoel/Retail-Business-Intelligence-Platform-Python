@@ -26,46 +26,6 @@ The company wants answers to questions such as:
 |Python Modules|	Packages, imports, project structure|
 |Business Analytics|	KPIs, trends, customer and inventory analysis|
 
-Project struture
-```
-retail-business-intelligence/
-│
-├── data/
-│   ├── raw/
-│   │   ├── products.csv
-│   │   ├── customers.csv
-│   │   ├── orders.csv
-│   │   └── inventory.csv
-│   │
-│   └── processed/
-│
-├── src/
-│   ├── models/
-│   │   ├── product.py
-│   │   ├── customer.py
-│   │   └── order.py
-│   │
-│   ├── data_processing/
-│   │   ├── loader.py
-│   │   └── cleaner.py
-│   │
-│   ├── analytics/
-│   │   ├── sales_analysis.py
-│   │   ├── customer_analysis.py
-│   │   ├── inventory_analysis.py
-│   │   └── kpi_engine.py
-│   │
-│   ├── visualization/
-│   │   ├── matplotlib_reports.py
-│   │   └── seaborn_reports.py
-│   │
-│   └── main.py
-│
-├── reports/
-├── tests/
-├── requirements.txt
-└── README.md
-```
 
 Tools
 |Tool|	Purpose|
