@@ -1,0 +1,16 @@
+supplier_id,supplier_name,city,country,avg_lead_time_days,payment_terms_days
+SUP001,Apex Trading 01,Indore,India,10,30
+SUP002,Prime Trading 02,Hyderabad,India,4,60
+SUP003,Apex Trading 03,Delhi,India,8,30
+SUP004,Unity Trading 04,Kolkata,India,-4,60
+SUP005,Everest Supply Co 05,Hyderabad,India,2,30
+SUP006,Everest Supply Co 06,Kochi,India,10,30
+SUP007,Summit Supply Co 07,Hyderabad,India,5,15
+SUP008,,Lucknow,India,13,45
+SUP009,Global Wholesale 09,Delhi,India,5,60
+SUP010,Unity Supply Co 10,Mumbai,India,13,30
+SUP011,Apex Trading 11,Kochi,India,9,45
+SUP012,Summit Distributors 12,Mumbai,India,5,60
+SUP013,Everest Supply Co 13,Pune,India,7,45
+SUP014,Prime Supply Co 14,Jaipur,India,4,30
+SUP015,Global Distributors 15,Kolkata,India,7,60

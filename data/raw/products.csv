@@ -1,26 +1,50 @@
-product_id,product_name,brand,category,unit_cost,unit_price
-1001,Keyboard,Brightline,Electronics,77.81,98.92
-1002,Mouse,Northstar,Electronics,31.65,43.32
-1003,Monitor,Northstar,Electronics,82.17,165.03
-1004,Headphones,Northstar,Electronics,72.09,92.06
-1005,Webcam,Northstar,Electronics,28.58,48.0
-1006,Blender,Nova,Home,68.67,127.63
-1007,Toaster,Brightline,Home,52.08,84.99
-1008,Lamp,UrbanLeaf,Home,97.7,122.66
-1009,Storage Box,UrbanLeaf,Home,84.68,130.34
-1010,Kettle,Northstar,Home,28.19,53.53
-1011,T-Shirt,Brightline,Clothing,13.85,18.45
-1012,Jeans,Everyday,Clothing,73.64,142.57
-1013,Jacket,Everyday,Clothing,65.74,136.55
-1014,Socks,Nova,Clothing,12.22,18.32
-1015,Sneakers,UrbanLeaf,Clothing,106.6,166.02
-1016,Coffee,UrbanLeaf,Grocery,85.43,110.12
-1017,Rice,UrbanLeaf,Grocery,93.45,195.07
-1018,Olive Oil,Everyday,Grocery,104.38,164.2
-1019,Cereal,Brightline,Grocery,77.38,120.72
-1020,Tea,Northstar,Grocery,44.57,81.1
-1021,Shampoo,UrbanLeaf,Beauty,74.27,103.64
-1022,Moisturizer,Nova,Beauty,22.12,34.78
-1023,Face Wash,Northstar,Beauty,28.69,43.77
-1024,Sunscreen,Brightline,Beauty,29.8,38.06
-1025,Perfume,Nova,Beauty,49.94,65.23
+product_id,product_name,brand,category,unit_cost,unit_price,supplier_id,active_flag
+10001,Keyboard,PeakForm,Electronics,3275.01,6033.72,SUP012,Y
+10002,Mouse,Aster & Co.,Electronics,,10141.77,SUP001,Y
+10003,Monitor,UrbanLeaf,Electronics,6999.58,11953.07,SUP005,Y
+10004,Headphones,PeakForm,Electronics,1856.48,3357.12,SUP006,Y
+10005,Webcam,PeakForm,Electronics,5598.79,7887.64,SUP008,Y
+10006,USB Hub,Everyday,Electronics,2310.29,3003.46,SUP009,Y
+10007,Router,Everyday,Electronics,6369.86,9126.46,SUP007,Y
+10008,Speaker,Everyday,Electronics,1926.68,3560.89,SUP008,Y
+10009,Blender,Brightline,Home,6443.69,11267.47,SUP011,Y
+10010,Toaster,Northstar,Home,6749.31,9639.21,SUP007,N
+10011,Lamp,Nova,Home,5097.38,7450.72,SUP009,Y
+10012,Storage Box,Everyday,Home,5807.99,6990.63,SUP013,Y
+10013,Kettle,Nova,Home,6551.6,8964.74,SUP007,Y
+10014,Cookware Set,PeakForm,Home,3900.35,7084.15,SUP005,Y
+10015,Vacuum Cleaner,PeakForm,home,4354.68,5215.51,SUP005,Y
+10016,Bedsheet,Everyday,Home,1366.91,2291.81,SUP013,Y
+10017,T-Shirt,Northstar,Clothing,5123.11,7565.21,SUP015,Y
+10018,Jeans,Nova,Clothing,7478.84,12916.82,SUP004,Y
+10019,Jacket,Northstar,Clothing,2108.14,3234.25,SUP002,N
+10020,Socks,Everyday,Clothing,6950.92,12747.49,SUP013,Y
+10021,Sneakers,Everyday,Clothing,1161.06,1703.22,SUP003,Y
+10022,Hoodie,Brightline,Clothing,4523.01,7068.62,SUP015,Y
+10023,Dress,PeakForm,Clothing,6083.03,8584.76,SUP011,Y
+10024,Backpack,Northstar,Clothing,3768.8,5645.02,SUP004,Y
+10025,Coffee,Everyday,Grocery,619.1,702.9,SUP004,Y
+10026,Rice,Northstar,Grocery,140.55,230.04,SUP004,Y
+10027,Olive Oil,Northstar,grocery,7703.64,13462.37,SUP009,Y
+10028,Cereal,Everyday,Grocery,2424.78,3574.98,SUP003,N
+10029,Tea,UrbanLeaf,Grocery,,3115.22,SUP004,Y
+10030,Pasta,UrbanLeaf,grocery,896.16,1285.69,SUP007,N
+10031,Honey,PeakForm,Grocery,7353.51,8526.73,SUP011,Y
+10032,Spices,Aster & Co.,Grocery,590.36,975.04,SUP014,Y
+10033,Shampoo,UrbanLeaf,Beauty,2173.69,2736.36,SUP003,N
+10034,Moisturizer,Aster & Co.,Beauty,1624.97,2368.75,SUP015,Y
+10035,Face Wash,Everyday,Beauty,3811.16,6664.9,SUP002,Y
+10036,Sunscreen,Northstar,beauty,5571.06,8438.09,SUP002,Y
+10037,Perfume,Brightline,Beauty,1480.34,2182.79,SUP014,N
+10038,Body Lotion,Northstar,Beauty,7678.57,-9522.85,SUP007,Y
+10039,Conditioner,Nova,Beauty,7881.28,13344.15,SUP007,N
+10040,Lip Balm,Northstar,Beauty,1383.39,-1849.03,SUP010,Y
+10041,Yoga Mat,Everyday,Sports,6377.95,7409.46,SUP008,Y
+10042,Dumbbell,Aster & Co.,Sports,558.93,833.21,SUP003,Y
+10043,Water Bottle,Brightline,Sports,5090.2,8210.01,SUP007,Y
+10044,Skipping Rope,Everyday,Sports,,12299.56,SUP010,Y
+10045,Tennis Racket,Everyday,Sports,5295.19,7551.12,SUP010,Y
+10046,Fitness Band,PeakForm,Sports,7950.23,10089.71,SUP006,Y
+10047,Cycling Helmet,PeakForm,Sports,2316.47,2815.76,SUP005,N
+10048,Gym Gloves,Northstar,Sports,2742.21,4576.37,SUP001,N
+10001,Keyboard,PeakForm,Electronics,3275.01,6033.72,SUP012,Y

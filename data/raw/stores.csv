@@ -1,9 +1,13 @@
-store_id,store_name,city,country
-301,Delhi Central,Delhi,India
-302,Mumbai West,Mumbai,India
-303,Bengaluru South,Bengaluru,India
-304,Hyderabad Central,Hyderabad,India
-305,Pune Market,Pune,India
-306,Jaipur City,Jaipur,India
-307,Lucknow Plaza,Lucknow,India
-308,Chennai Marina,Chennai,India
+store_id,store_name,city,state,country,store_type,opening_date
+S001,Delhi Central,Delhi,Delhi,India,High Street,2018-04-01
+S002,Mumbai Market,Mumbai,Maharashtra,India,Mall,2018-06-30
+S003,Bengaluru Central, bengaluru ,Karnataka,India,High Street,2018-09-28
+S004,Hyderabad Market,Hyderabad,Telangana,India,Mall,2018-12-27
+S005,Pune Central,Pune,Maharashtra,India,High Street,2019-03-27
+S006,,Jaipur,Rajasthan,India,Mall,2019-06-25
+S007,Lucknow Central,Lucknow,Uttar Pradesh,India,High Street,2019-09-23
+S008,Chennai Market,Chennai,Tamil Nadu,India,Mall,2019-12-22
+S009,Kolkata Central,Kolkata,West Bengal,India,High Street,2020-03-21
+S010,Ahmedabad Market,Ahmedabad,Gujarat,India,Mall,2020-06-19
+S011,Indore Central,Indore,Madhya Pradesh,India,High Street,2020-09-17
+S012,Kochi Market,Kochi,Kerala,India,Mall,2020-12-16

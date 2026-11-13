@@ -1,0 +1,29 @@
+dataset,issue_type,approx_count,details
+transactions.csv,duplicate_transaction_id,45,45 rows were assigned an existing transaction ID; investigate before deduplicating.
+transactions.csv,missing_customer_id,85,Customer attribution is missing; sales may still be valid.
+transactions.csv,missing_discount_pct,55,Discount is missing; do not assume zero without a documented business rule.
+transactions.csv,malformed_transaction_date,28,Invalid date strings were injected.
+transactions.csv,invalid_quantity_type,35,Quantity contains non-numeric text.
+transactions.csv,discount_out_of_range,30,Discount percentages outside the expected 0–100 range were injected; decide a stricter business rule if appropriate.
+transactions.csv,orphan_store_reference,20,Store IDs do not exist in stores.csv.
+transactions.csv,orphan_product_reference,20,Product IDs do not exist in products.csv.
+transactions.csv,inconsistent_payment_category,20,"Payment labels contain casing, whitespace and unexpected categories."
+transactions.csv,currency_formatted_numeric,25,Some unit prices are formatted as text with currency symbols and separators.
+transactions.csv,whitespace_category,15,Sales channel has inconsistent whitespace.
+products.csv,missing_unit_cost,3,Cost is missing; profitability cannot be calculated for these products without resolution.
+products.csv,category_casing,4,Category capitalization is inconsistent.
+products.csv,negative_unit_price,2,Negative catalog prices are invalid and require investigation.
+products.csv,duplicate_product_record,1,One full product row is duplicated.
+customers.csv,missing_email,30,Email is optional for analytics but should be flagged.
+customers.csv,invalid_email_format,18,Malformed email addresses were injected.
+customers.csv,whitespace_customer_id,12,Trim whitespace before key validation.
+customers.csv,city_casing,15,City values have inconsistent casing.
+customers.csv,duplicate_customer_record,1,One full customer row is duplicated.
+stores.csv,whitespace_city_and_missing_store_name,2,One city has surrounding whitespace; one store name is missing.
+suppliers.csv,invalid_supplier_attributes,2,Negative lead time and missing supplier name were injected.
+inventory.csv,negative_stock,15,Negative on-hand stock is invalid unless explicitly representing a backorder; investigate.
+inventory.csv,orphan_store_reference,12,Inventory references unknown stores.
+inventory.csv,orphan_product_reference,12,Inventory references unknown products.
+inventory.csv,invalid_snapshot_date,10,Malformed inventory snapshot dates.
+inventory.csv,invalid_stock_type,10,Stock quantity contains non-numeric text.
+calendar.csv,invalid_calendar_labels,2,Month/day labels conflict with the date; derive these fields from the date.
