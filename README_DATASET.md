@@ -48,5 +48,3 @@ This is a **synthetic training dataset** designed to resemble a multi-store reta
 6. Build analytics from validated data.
 7. Add unit and integration tests.
 8. Build the Streamlit dashboard.
-
-See `answer_key/data_quality_issue_manifest.csv` for the instructor QA checklist. Keep that file away from developers until they have completed their initial profiling exercise.
