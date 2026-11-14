@@ -1,0 +1,38 @@
+
+
+class csvreader:
+    
+    # Constructor to initialize the csvreader object with the filename and read the CSV data.
+    def __init__(self,filename):
+        self.filename = self.filePath()+filename
+        self.data = []
+        self.read_csv()
+        self.header=[]
+        
+    # Get the file path.
+    def filePath(self):
+        return "data/raw/"
+    
+    # read csv file and store data in list of dictionaries.    
+    def read_csv(self):
+        with open(self.filename,'r') as file:
+            for i,line in enumerate(file):
+                if i==0:
+                    self.header=line.strip().split(",")
+                else:
+                    for j,row in enumerate(line.strip().split(",")):
+                        self.data.append({self.header[j]:row} )
+                        
+                #print(f"Reading line:{i} {line.strip()}")
+            #print(f"Data:{self.data[0].get('transaction_id', 'Not Found')}")
+            
+    #Inspect column names.        
+    def getColumnName(self):
+        return self.header
+    
+    #Count total rows.
+    def getTotalRows(self):
+        return len(self.data)
+    
+    #Calculate total valid transaction quantities.
+    def getTotalTransactionQuantity(self):
