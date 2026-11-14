@@ -20,12 +20,16 @@ class csvreader:
                 if i==0:
                     self.header=line.strip().split(",")
                 else:
-                    for j,row in enumerate(line.strip().split(",")):
-                        self.data.append({self.header[j]:row} )
-                        
+                    try:
+                        for j,row in enumerate(line.strip().split(",")):
+                            self.data.append({self.header[j]:row} )
+                    except (IndexError, TypeError) as e:
+                        pass
+                        #print(f"Error occurred while reading line {i}: {e}")
+
                 #print(f"Reading line:{i} {line.strip()}")
             #print(f"Data:{self.data[0].get('transaction_id', 'Not Found')}")
-            
+        return self.data    
     #Inspect column names.        
     def getColumnName(self):
         return self.header
@@ -34,5 +38,3 @@ class csvreader:
     def getTotalRows(self):
         return len(self.data)
     
-    #Calculate total valid transaction quantities.
-    def getTotalTransactionQuantity(self):
