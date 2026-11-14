@@ -6,7 +6,6 @@ class csvreader:
     def __init__(self,filename):
         self.filename = self.filePath()+filename
         self.data = []
-        self.read_csv()
         self.header=[]
         
     # Get the file path.
@@ -22,8 +21,7 @@ class csvreader:
                 else:
                     try:
                         datadict={}
-                        for j,row in enumerate(line.strip().split(",")):
-                            
+                        for j,row in enumerate(line.strip().split(",")):                            
                             datadict[self.header[j]]=row
                             
                         self.data.append(datadict)
