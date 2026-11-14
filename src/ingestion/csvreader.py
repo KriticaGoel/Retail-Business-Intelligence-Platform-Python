@@ -21,8 +21,13 @@ class csvreader:
                     self.header=line.strip().split(",")
                 else:
                     try:
+                        datadict={}
                         for j,row in enumerate(line.strip().split(",")):
-                            self.data.append({self.header[j]:row} )
+                            
+                            datadict[self.header[j]]=row
+                            
+                        self.data.append(datadict)
+                        print(self.data)
                     except (IndexError, TypeError) as e:
                         pass
                         #print(f"Error occurred while reading line {i}: {e}")
