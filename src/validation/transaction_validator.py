@@ -13,8 +13,7 @@ class TransactionAnalyzer:
             try:
                 transaction_quantity =transaction_quantity + int(row.get('quantity', 0))
             except (ValueError, TypeError) as e:
-                pass
-                #print(f"Error occurred while calculating total transaction quantity: {e}")
+               print(f"Error occurred while calculating total transaction quantity: {e}")
         return transaction_quantity
     
     #Count records with missing quantities.
@@ -44,7 +43,6 @@ class TransactionAnalyzer:
                 if(row.get('quantity') is not None and int(row.get('quantity', 0)) < 0):
                     negative_quantity += 1
             except (ValueError, TypeError) as e:
-                pass
-                #print(f"Error occurred while calculating negative transaction quantity: {e}")
+                print(f"Error occurred while calculating negative transaction quantity: {e}")
         return negative_quantity
    
