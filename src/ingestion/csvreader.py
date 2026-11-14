@@ -1,6 +1,6 @@
 
 
-class csvreader:
+class CSVReader:
     
     # Constructor to initialize the csvreader object with the filename and read the CSV data.
     def __init__(self,filename):
@@ -37,6 +37,6 @@ class csvreader:
         return self.header
     
     #Count total rows.
-    def getTotalRows(self):
+    def get_total_rows(self):
         return len(self.data)
     

@@ -1,13 +1,13 @@
 
 
 
-class transactions:
+class TransactionAnalyzer:
     
     def __init__(self,data):
         self.data=data
 
     #Calculate total valid transaction quantities.
-    def getTotalTransactionQuantity(self):
+    def get_total_quantity(self):
         transaction_quantity=0
         for row in self.data:
             try:
@@ -18,24 +18,26 @@ class transactions:
         return transaction_quantity
     
     #Count records with missing quantities.
-    def getMissingQuantity(self):
+    def get_missing_quantity(self):
         missing_quantity=0;
         for row in self.data:
-             if(row.get('quantity') is None or row.get('quantity') == ''):
+             if(row.get('quantity') is None or row.get('quantity').strip() == ''):
                  missing_quantity += 1
         return missing_quantity
     
     #Count records with invalid, non-numeric quantities.
-    def getInvalidQuantity(self):
+    def get_invalid_quantity(self):
         invalid_quantity=0;
         for row in self.data:
             try:
-                int(row.get('quantity', 0))
+                quantity=row.get('quantity')
+                int(quantity)
             except (ValueError, TypeError) as e:
                 invalid_quantity += 1
         return invalid_quantity
+    
     #Identify negative quantities and count them separately.
-    def getNegativeQuantity(self):
+    def get_negative_quantity(self):
         negative_quantity=0
         for row in self.data:
             try:
