@@ -25,7 +25,6 @@ class csvreader:
                             datadict[self.header[j]]=row
                             
                         self.data.append(datadict)
-                        print(self.data)
                     except (IndexError, TypeError) as e:
                         pass
                         #print(f"Error occurred while reading line {i}: {e}")
