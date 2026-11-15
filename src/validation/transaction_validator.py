@@ -8,12 +8,14 @@ class TransactionAnalyzer:
 
     #Calculate total valid transaction quantities.
     def get_total_quantity(self):
+        error=0
         transaction_quantity=0
         for row in self.data:
             try:
-                transaction_quantity =transaction_quantity + int(row.get('quantity', 0))
+                transaction_quantity =transaction_quantity + int(row.get('quantity'))
             except (ValueError, TypeError) as e:
-               print(f"Error occurred while calculating total transaction quantity: {e}")
+                error +=1
+        print(f"Error occurred while calculating total transaction quantity: {error}")
         return transaction_quantity
     
     #Count records with missing quantities.
@@ -38,12 +40,14 @@ class TransactionAnalyzer:
     
     #Identify negative quantities and count them separately.
     def get_negative_quantity(self):
+        error=0;
         negative_quantity=0
         for row in self.data:
             try:
                 if(row.get('quantity') is not None and int(row.get('quantity', 0)) < 0):
                     negative_quantity += 1
             except (ValueError, TypeError) as e:
-                print(f"Error occurred while calculating negative transaction quantity: {e}")
+                error += 1
+        print(f"Error occurred while checking for negative quantities: {error}")
         return negative_quantity
    

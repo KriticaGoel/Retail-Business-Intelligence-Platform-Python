@@ -2,14 +2,18 @@
 from ingestion.csvreader import CSVReader
 from validation.transaction_validator import TransactionAnalyzer
 
+def main():
+    csvread=CSVReader("transactions.csv")
+    transaction_data=csvread.read_csv()
+    transactions =TransactionAnalyzer(transaction_data)
+    print("TRANSACTION SUMMARY")
+    print("-------------------")
+    print(f"Total Rows: {csvread.get_total_rows()}")
+    print(f"Total transaction quantity : {transactions.get_total_quantity()}")
+    print(f"Invalid quantities: {transactions.get_invalid_quantity()}")
+    print(f"Missing quantities: {transactions.get_missing_quantity()}")
+    print(f"Negative quantities: {transactions.get_negative_quantity()}")
 
-csvread=CSVReader("transactions.csv")
-transaction_data=csvread.read_csv()
-transactions =TransactionAnalyzer(transaction_data)
-print("TRANSACTION SUMMARY")
-print("-------------------")
-print(f"Total Rows: {csvread.get_total_rows()}")
-print(f"Total transaction quantity : {transactions.get_total_quantity()}")
-print(f"Invalid quantities: {transactions.get_invalid_quantity()}")
-print(f"Missing quantities: {transactions.get_missing_quantity()}")
-print(f"Negative quantities: {transactions.get_negative_quantity()}")
+
+if __name__ == "__main__":
+    main()
