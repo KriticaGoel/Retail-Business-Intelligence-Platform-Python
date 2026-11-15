@@ -4,4 +4,3 @@ class QuantityStatus(Enum):
     VALID = "Valid"
     MISSING = "Missing"
     INVALID = "Invalid"
-    NEGATIVE = "Negative"

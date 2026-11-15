@@ -13,8 +13,9 @@ class TransactionAnalyzer:
     def get_total_quantity(self):
         transaction_quantity=0
         for row in self.data:
-            if self.get_quantity_classification(row.get('quantity'))==QuantityStatus.VALID or self.get_quantity_classification(row.get('quantity'))==QuantityStatus.NEGATIVE:
-                transaction_quantity =transaction_quantity + int(row.get('quantity'))
+           status = self.get_quantity_classification(row.get("quantity"))
+           if status == QuantityStatus.VALID:
+                transaction_quantity += int(row.get("quantity"))
         return transaction_quantity
     
     #Count records with missing quantities.
@@ -37,19 +38,19 @@ class TransactionAnalyzer:
     def get_negative_quantity(self):
         negative_quantity=0
         for row in self.data:
-            if self.get_quantity_classification(row.get('quantity'))==QuantityStatus.NEGATIVE:
+            if self.get_quantity_classification(row.get('quantity'))==QuantityStatus.VALID and int(row.get('quantity')) < 0:
                 negative_quantity += 1
             
         return negative_quantity
     
     
-    def get_quantity_classification(self,quantity):
-        if(quantity is None or str(quantity).strip() == ''):
-            return QuantityStatus.MISSING
+    def get_quantity_classification(self,qty):
         try:
-            if  int(quantity) < 0:
-                return QuantityStatus.NEGATIVE
-        except ValueError:
+            if(qty is None or str(qty).strip() == ''):
+                return QuantityStatus.MISSING
+            elif int(qty) <0:
+                return QuantityStatus.VALID
+        except TypeError , ValueError:
             return QuantityStatus.INVALID
         return QuantityStatus.VALID
         
