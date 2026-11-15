@@ -1,6 +1,9 @@
 
 
 
+from enums.quantity_status import QuantityStatus
+
+
 class TransactionAnalyzer:
     
     def __init__(self,data):
@@ -8,46 +11,46 @@ class TransactionAnalyzer:
 
     #Calculate total valid transaction quantities.
     def get_total_quantity(self):
-        error=0
         transaction_quantity=0
         for row in self.data:
-            try:
+            if self.get_quantity_classification(row.get('quantity'))==QuantityStatus.VALID or self.get_quantity_classification(row.get('quantity'))==QuantityStatus.NEGATIVE:
                 transaction_quantity =transaction_quantity + int(row.get('quantity'))
-            except (ValueError, TypeError) as e:
-                error +=1
-        print(f"Error occurred while calculating total transaction quantity: {error}")
         return transaction_quantity
     
     #Count records with missing quantities.
     def get_missing_quantity(self):
-        missing_quantity=0;
+        missing_quantity=0
         for row in self.data:
-             if(row.get('quantity') is None or row.get('quantity').strip() == ''):
+             if(self.get_quantity_classification(row.get('quantity'))==QuantityStatus.MISSING):
                  missing_quantity += 1
         return missing_quantity
     
     #Count records with invalid, non-numeric quantities.
     def get_invalid_quantity(self):
-        invalid_quantity=0;
+        invalid_quantity=0
         for row in self.data:
-            try:
-                 if(row.get('quantity') is not None and row.get('quantity').strip() != ''): # this is missing records
-                    quantity=row.get('quantity')
-                    int(quantity) # valid quantity, if not will throw exception
-            except (ValueError, TypeError) as e:
+            if self.get_quantity_classification(row.get('quantity'))==QuantityStatus.INVALID:
                 invalid_quantity += 1
         return invalid_quantity
     
     #Identify negative quantities and count them separately.
     def get_negative_quantity(self):
-        error=0;
         negative_quantity=0
         for row in self.data:
-            try:
-                if(row.get('quantity') is not None and int(row.get('quantity', 0)) < 0):
-                    negative_quantity += 1
-            except (ValueError, TypeError) as e:
-                error += 1
-        print(f"Error occurred while checking for negative quantities: {error}")
+            if self.get_quantity_classification(row.get('quantity'))==QuantityStatus.NEGATIVE:
+                negative_quantity += 1
+            
         return negative_quantity
+    
+    
+    def get_quantity_classification(self,quantity):
+        if(quantity is None or str(quantity).strip() == ''):
+            return QuantityStatus.MISSING
+        try:
+            if  int(quantity) < 0:
+                return QuantityStatus.NEGATIVE
+        except ValueError:
+            return QuantityStatus.INVALID
+        return QuantityStatus.VALID
+        
    
