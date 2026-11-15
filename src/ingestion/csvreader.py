@@ -13,6 +13,8 @@ class CSVReader:
     
     # read csv file and store data in list of dictionaries.    
     def read_csv(self):
+        print(f"Reading CSV file: {self.filename}")
+        self.data = []
         try:
             with open(self.filename,'r') as file:
                 reader = csv.DictReader(file)
