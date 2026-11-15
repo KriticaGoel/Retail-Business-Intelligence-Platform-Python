@@ -31,9 +31,9 @@ class TransactionAnalyzer:
         invalid_quantity=0;
         for row in self.data:
             try:
-                 if(row.get('quantity') is not None or row.get('quantity').strip() != ''): # this is missing records
+                 if(row.get('quantity') is not None and row.get('quantity').strip() != ''): # this is missing records
                     quantity=row.get('quantity')
-                    int(quantity)
+                    int(quantity) # valid quantity, if not will throw exception
             except (ValueError, TypeError) as e:
                 invalid_quantity += 1
         return invalid_quantity
