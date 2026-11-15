@@ -1,47 +1,22 @@
 import csv
-
+from pathlib import Path
 class CSVReader:
     
     # Constructor to initialize the csvreader object with the filename and read the CSV data.
     def __init__(self,filename):
-        self.filename = self.filePath()+filename
+        self.file_path = Path("data") / "raw" / filename
+        if not self.file_path.exists():
+            raise FileNotFoundError(f"File not found: {self.file_path}")
         self.data = []
-        
-    # Get the file path.
-    def filePath(self):
-        return "data/raw/"
-    
+           
     # read csv file and store data in list of dictionaries.    
     def read_csv(self):
-        print(f"Reading CSV file: {self.filename}")
+        print(f"Reading CSV file: {self.file_path}")
         self.data = []
-        try:
-            with open(self.filename,'r') as file:
-                reader = csv.DictReader(file)
-               # self.header = reader.fieldnames
-
-                for row in reader:
-                    self.data.append(row)
-                # for i,line in enumerate(file):
-                #     if i==0:
-                #         self.header=line.strip().split(",")
-                #     else:
-                #         try:
-                #             datadict={}
-                #             for j,row in enumerate(line.strip().split(",")):                            
-                #                 datadict[self.header[j]]=row
-                                
-                #             self.data.append(datadict)
-                #         except (IndexError, TypeError) as e:
-                #             pass
-                            #print(f"Error occurred while reading line {i}: {e}")
-
-                    #print(f"Reading line:{i} {line.strip()}")
-                #print(f"Data:{self.data[0].get('transaction_id', 'Not Found')}")
-        except FileNotFoundError as e:
-            print(f"File not found: {e}")
-        except Exception as e:
-            print(f"An error occurred while reading the CSV file: {e}")
+        with self.file_path.open(mode="r",encoding="utf-8-sig",newline="") as file:
+            reader = csv.DictReader(file)
+            for row in reader:
+                self.data.append(row)
         return self.data    
    
     #Count total rows.
