@@ -1,8 +1,7 @@
-
-
-
 from enums.quantity_status import QuantityStatus
-
+import logging
+ 
+logger=logging.getLogger(__name__)
 
 class TransactionAnalyzer:
     
@@ -16,6 +15,8 @@ class TransactionAnalyzer:
            status = self.get_quantity_classification(row.get("quantity"))
            if status == QuantityStatus.VALID:
                 transaction_quantity += int(row.get("quantity"))
+                
+        logger.info(f"Total transaction quantity : {transaction_quantity}")
         return transaction_quantity
     
     #Count records with missing quantities.

@@ -921,8 +921,3 @@ At the end of the 19-day project, the team should have:
 
 **Final goal:** Both developers should be able to independently explain, run, test, and extend the Retail Business Intelligence Platform—not merely demonstrate code written during the project.
 
-# 13. Schedule and Scope Note
-
-The original 24-day plan has been consolidated into 19 working days by combining the original Days 1–6 into one intensive foundation day. This is a compressed schedule, not a reduction in engineering expectations. Day 1 is deliberately focused on producing reusable components that support the remaining work.
-
-If the foundation is not reusable, or if acceptance criteria are not met, spend additional time fixing it rather than carrying technical debt into the Pandas and analytics phases.

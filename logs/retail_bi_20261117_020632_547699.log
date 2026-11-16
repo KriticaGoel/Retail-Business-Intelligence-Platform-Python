@@ -1,0 +1,11 @@
+2026-11-17 02:06:32 | INFO     | root | Global logging configured successfully
+2026-11-17 02:06:32 | INFO     | __main__ | Retail BI application started
+2026-11-17 02:06:32 | INFO     | ingestion.csvreader | Reading CSV file: D:\Workspace\Python_Projects\RetailBusinessIntelligence\data\raw\transactions.csv
+2026-11-17 02:06:32 | INFO     | __main__ | TRANSACTION SUMMARY
+2026-11-17 02:06:32 | INFO     | __main__ | -------------------
+2026-11-17 02:06:32 | INFO     | __main__ | Total Rows: 20000
+2026-11-17 02:06:32 | INFO     | validation.transaction_validator | Total transaction quantity : 38829
+2026-11-17 02:06:32 | INFO     | __main__ | Total transaction quantity : 38829
+2026-11-17 02:06:32 | INFO     | __main__ | Invalid quantities: 35
+2026-11-17 02:06:32 | INFO     | __main__ | Missing quantities: 0
+2026-11-17 02:06:32 | INFO     | __main__ | Negative quantities: 357
