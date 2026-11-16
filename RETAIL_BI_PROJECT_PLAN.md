@@ -1,14 +1,12 @@
-
-
 # Retail Business Intelligence Platform
-## 24-Day Project Plan
+## 19-Day Project Plan
 
 **Project:** Retail Business Intelligence Platform  
-**Duration:** 24 working days  
-**Team:** 2 Developers  
+**Duration:** 19 working days  
+**Team:** 2 developers  
 **Language:** Python  
-**Primary Libraries:** NumPy, Pandas, Matplotlib, Seaborn, Streamlit, Pytest  
-**Version:** 1.0
+**Primary libraries:** NumPy, Pandas, Matplotlib, Seaborn, Streamlit, Pytest  
+**Version:** 2.0
 
 ---
 
@@ -16,64 +14,46 @@
 
 ## 1.1 Objective
 
-Build a complete Retail Business Intelligence Platform using Python.
+Build a complete Retail Business Intelligence Platform using Python. The application will transform raw retail datasets into validated, cleaned, integrated data, calculate business metrics, and present actionable insights through an interactive dashboard.
 
-The project will transform raw retail datasets into validated, cleaned, analyzed data and present useful business insights through an interactive dashboard.
+The project develops practical skills in:
 
-The project is designed to develop practical Python development skills while implementing a realistic data analytics application.
-
-Both developers will learn the full project lifecycle, including:
-
-- Python fundamentals and object-oriented programming.
-- File handling and CSV processing.
-- Data structures and algorithms.
-- Exception handling and logging.
+- Python fundamentals, collections, functions, modules, and OOP.
+- File handling, exception handling, logging, configuration, and type hints.
 - NumPy and Pandas.
-- Data cleaning and validation.
-- Data analysis and business metrics.
-- Data visualization.
-- Software architecture.
-- Unit and integration testing.
-- Git and collaborative development.
-- Streamlit dashboard development.
-- Documentation and deployment preparation.
+- Data profiling, cleaning, validation, and integration.
+- Retail business analytics and metric design.
+- Matplotlib, Seaborn, and Streamlit.
+- Software architecture, testing, Git collaboration, QA, and documentation.
 
-## 1.2 Final Project Outcome
+## 1.2 Final Outcome
 
-At the end of 24 working days, the team should deliver a working application that:
+At completion, the team will deliver an application that:
 
 1. Reads multiple raw retail datasets.
 2. Profiles and validates incoming data.
 3. Identifies data quality problems.
-4. Cleans data without modifying the original raw files.
-5. Maintains rejected or problematic records for investigation.
+4. Cleans data without modifying original raw files.
+5. Preserves rejected or problematic records for investigation.
 6. Integrates related datasets safely.
 7. Calculates retail business metrics.
 8. Analyzes sales, products, customers, stores, inventory, and suppliers.
 9. Presents results through an interactive dashboard.
 10. Includes automated tests and technical documentation.
 
----
-
 # 2. Team Responsibilities
 
-The project has two developers.
+Ownership divides implementation work, not learning. Both developers must understand the complete application and be able to explain and execute every major module.
 
-The ownership split is intended to divide implementation work, not learning. Both developers must understand the complete application and be able to explain and execute each module.
-
-## Developer A
-
-Primary ownership:
+## Developer A — Primary Ownership
 
 - Transactions and sales analytics.
 - Stores.
 - Inventory.
 - Sales-related metrics.
-- Sales dashboard.
+- Sales and store dashboard pages.
 
-## Developer B
-
-Primary ownership:
+## Developer B — Primary Ownership
 
 - Products.
 - Customers.
@@ -83,77 +63,59 @@ Primary ownership:
 
 ## Shared Responsibilities
 
-Both developers will work together on:
-
-- Project architecture.
-- Python fundamentals.
-- Data dictionary.
-- Validation framework.
-- Calendar data.
-- Data cleaning standards.
-- Integration.
-- Testing.
-- Git workflow.
-- Dashboard shell.
-- Final quality assurance.
-- Documentation and demonstration.
+- Project architecture and common ingestion/validation framework.
+- Data dictionary and calendar data.
+- Data cleaning standards and integration.
+- Testing and Git workflow.
+- Dashboard shell, executive overview, and data quality page.
+- Final QA, documentation, and demonstration.
 
 ## Collaboration Rules
 
-1. Each developer completes their individual assignment.
-2. Developers review each other's implementation.
-3. Shared tasks are completed together.
-4. Code must be tested before integration.
-5. Every significant change must be committed to Git.
-6. No developer should merge code without reviewing its impact on shared modules.
+1. Complete individual assignments first.
+2. Review each other's implementation.
+3. Complete shared tasks together.
+4. Test code before integration.
+5. Commit significant changes to Git.
+6. Review the impact of changes to shared modules before merging.
 7. Both developers must be able to run the complete application independently.
-
----
+8. A task is complete only when its acceptance criteria pass.
 
 # 3. Dataset Inventory
 
-The project uses a synthetic retail dataset containing seven primary CSV files.
+The project uses seven synthetic retail CSV datasets.
 
 | Dataset | Approximate rows | Purpose |
 |---|---:|---|
-| transactions.csv | 20,000 | Retail transaction lines |
-| products.csv | 49 | Product catalog |
-| customers.csv | 2,501 | Customer master data |
-| stores.csv | 12 | Store information |
-| calendar.csv | 731 | Date dimension |
-| inventory.csv | 2,304 | Quarterly inventory snapshots |
-| suppliers.csv | 15 | Supplier information |
+| `transactions.csv` | 20,000 | Retail transaction lines |
+| `products.csv` | 49 | Product catalog |
+| `customers.csv` | 2,501 | Customer master data |
+| `stores.csv` | 12 | Store information |
+| `calendar.csv` | 731 | Date dimension |
+| `inventory.csv` | 2,304 | Quarterly inventory snapshots |
+| `suppliers.csv` | 15 | Supplier information |
 
-The row counts include intentionally introduced quality issues, including duplicate records in some files.
+Row counts include intentionally introduced data quality issues, including duplicate records in some files.
 
 ## 3.1 Dataset Relationships
 
-Expected relationships:
-
-- Transactions reference products.
-- Transactions reference customers.
-- Transactions reference stores.
-- Transactions reference calendar dates.
+- Transactions reference products, customers, stores, and calendar dates.
 - Inventory references products and stores.
 - Products may reference suppliers.
 - Calendar provides date attributes for analytical reporting.
 
-The team must verify these relationships using the actual dataset rather than assuming that every reference is valid.
+Verify these relationships against the actual data. Do not assume every reference is valid.
 
-## 3.2 Important Dataset Limitations
+## 3.2 Dataset Limitations
 
-- Inventory data represents quarterly snapshots, not live stock.
+- Inventory represents quarterly snapshots, not live stock.
 - Supplier lead time is an attribute, not evidence of actual delivery performance.
-- Historical transaction prices may differ from current product catalog prices.
-- A transaction line is not necessarily equivalent to a distinct order.
-- A valid average order value requires a validated order identifier.
-- Estimated gross profit is not the same as net profit.
-
----
+- Historical transaction prices may differ from current catalog prices.
+- A transaction line is not necessarily a distinct order.
+- Average Order Value (AOV) requires a validated order identifier.
+- Estimated gross profit is not net profit.
 
 # 4. Business Rules and Data Quality Standards
-
-These rules must guide implementation, validation, cleaning, and analysis.
 
 ## 4.1 Raw Data Preservation
 
@@ -164,8 +126,7 @@ These rules must guide implementation, validation, cleaning, and analysis.
 
 ## 4.2 Duplicate Records
 
-- Identify exact duplicate rows.
-- Identify duplicate business identifiers.
+- Identify exact duplicate rows and duplicate business identifiers separately.
 - Do not automatically delete every duplicate.
 - Investigate conflicting records before deciding which record to retain.
 - Record duplicate counts and decisions.
@@ -186,29 +147,21 @@ These rules must guide implementation, validation, cleaning, and analysis.
 
 ## 4.5 Prices and Discounts
 
-- Historical transaction unit prices must be preserved.
+- Preserve historical transaction unit prices.
 - Do not replace historical prices with current catalog prices.
-- Discounts must be validated against the agreed business range.
-- Invalid numeric values must be identified and handled explicitly.
+- Validate discounts against the agreed business range.
+- Identify and handle invalid numeric values explicitly.
 
 ## 4.6 Identifier Normalization
 
 - Normalize identifiers before joining datasets.
-- Handle values that contain unwanted trailing decimal notation, such as `1001.0`.
+- Handle unwanted trailing decimal notation such as `1001.0`.
 - Trim unnecessary whitespace.
 - Preserve original source values when needed for auditability.
 
 ## 4.7 Referential Integrity
 
-Validate that:
-
-- Every transaction product reference maps to a valid product.
-- Every transaction customer reference maps to a valid customer, where customer identification is required.
-- Every transaction store reference maps to a valid store.
-- Inventory product and store references are valid.
-- Supplier references are valid where required.
-
-Do not silently remove orphan records.
+Validate transaction references to products, customers, stores, and dates, plus inventory references to products and stores and supplier references where applicable. Do not silently remove orphan records.
 
 ## 4.8 Financial Metric Definitions
 
@@ -220,340 +173,159 @@ Do not silently remove orphan records.
 
 `net_sales - (quantity × product_unit_cost)`
 
-This is an estimate based on available cost data. It excludes operating expenses, taxes, shipping, and other costs.
+This estimate excludes operating expenses, taxes, shipping, and other costs. Missing costs must not silently be treated as zero.
 
 **Average Order Value**
 
 `net sales / distinct valid orders`
 
-Only calculate AOV after validating order identifiers and ensuring that the calculation uses distinct orders rather than transaction lines.
+Calculate AOV only after validating order identifiers and using distinct orders rather than transaction lines.
 
-**Returns**
-
-Negative quantities must remain signed in calculations. Report returns separately when that improves business interpretation.
+**Returns:** Negative quantities remain signed in calculations. Report returns separately when that improves business interpretation.
 
 ## 4.9 Inventory Limitations
 
-Inventory records are quarterly snapshots.
-
-The project can analyze:
-
-- Snapshot stock levels.
-- Differences between snapshots.
-- Products with low recorded stock.
-- Store-level stock distribution.
-
-The project must not claim to show live stock availability.
+Inventory records are quarterly snapshots. The project may analyze stock levels, snapshot-to-snapshot differences, low recorded stock, and store-level distribution. It must not claim to show live stock availability.
 
 ## 4.10 Supplier Limitations
 
-Supplier lead time can be analyzed as a stated supplier attribute.
-
-Without actual purchase order and delivery event data, the project cannot calculate a true on-time delivery rate.
-
----
-
-# 5. Project Timeline: 24 Working Days
-
-# Phase 1 — Python Foundations
-
-## Day 1 — Python Fundamentals and CSV Processing
-
-**Objective:** Understand Python basics and read CSV data.
-
-### Developer A — Transactions
-
-- Read `transactions.csv`.
-- Inspect column names.
-- Count total rows.
-- Calculate total valid transaction quantities.
-- Identify missing quantities.
-- Identify invalid numeric quantities.
-- Preserve negative quantities for returns.
-
-### Developer B — Products
-
-- Read `products.csv`.
-- Inspect column names.
-- Count total rows.
-- Calculate average valid catalog price.
-- Count products by category.
-- Identify missing and invalid prices.
-
-### Shared Task
-
-- Discuss missing values.
-- Discuss invalid numeric values.
-- Define initial validation rules.
-- Record assumptions.
-
-**Expected output:**
-
-Two independent Python scripts that read their respective CSV files and produce correct summaries.
-
-**Acceptance criteria:**
-
-- Both scripts run successfully.
-- CSV files are read without manual row-by-row editing.
-- Invalid values are identified rather than silently ignored.
-- Negative quantities are retained.
-- Results are understandable and reproducible.
-
----
-
-## Day 2 — Python Collections and Data Structures
-
-**Objective:** Understand lists, tuples, sets, and dictionaries.
-
-### Developer A
-
-- Store transaction summaries using dictionaries.
-- Count transactions by store.
-- Identify duplicate transaction identifiers.
-- Group quantities by product identifier.
-
-### Developer B
-
-- Store product information using dictionaries.
-- Count products by category.
-- Identify duplicate product identifiers.
-- Find minimum, maximum, and average prices.
-
-### Shared Task
-
-Create an initial data dictionary documenting:
-
-- Dataset name.
-- Column name.
-- Expected meaning.
-- Expected data type.
-- Whether null values are allowed.
-- Basic business constraints.
-
-**Expected output:**
-
-Python scripts using collections effectively, plus an initial data dictionary.
-
-**Acceptance criteria:**
-
-- Grouping logic is correct.
-- Duplicate identification is demonstrated.
-- Appropriate data structures are used.
-- Both developers can explain why each structure was selected.
-
----
-
-## Day 3 — Functions, Modules, and File Handling
-
-**Objective:** Write reusable and maintainable Python code.
-
-### Developer A
-
-Create reusable functions for:
-
-- Reading transaction data.
-- Counting rows.
-- Summarizing quantities.
-- Identifying missing values.
-
-### Developer B
-
-Create reusable functions for:
-
-- Reading product data.
-- Calculating average prices.
-- Counting categories.
-- Identifying invalid prices.
-
-### Shared Task
-
-Create the initial project package structure.
-
-Introduce:
-
-- Functions.
-- Imports.
-- Modules.
-- `pathlib`.
-- Relative and absolute paths.
-- Main entry points.
-
-**Expected output:**
-
-Reusable Python modules rather than large scripts containing all logic.
-
-**Acceptance criteria:**
-
-- Functions have clear responsibilities.
-- File paths are not unnecessarily hardcoded.
-- Scripts can be executed from the project root.
-- Common logic is not duplicated unnecessarily.
-
----
-
-## Day 4 — Object-Oriented Programming
-
-**Objective:** Understand and apply Python OOP.
-
-### Both Developers
-
-Study and implement:
-
-- Classes and objects.
-- Constructors.
-- Instance attributes.
-- Methods.
-- Encapsulation.
-- Inheritance.
-- Polymorphism.
-- Abstraction.
-- Abstract base classes.
-- Duck typing.
-- Composition.
-
-### Practical Task
-
-Design simple classes for:
-
-- Dataset reader.
-- Data validator.
-- Data summary.
-
-Discuss how Python OOP differs from Java OOP, especially:
-
-- Dynamic typing.
-- Access conventions.
-- Duck typing.
-- Multiple inheritance.
-- Abstract base classes.
-
-**Expected output:**
-
-A small OOP prototype demonstrating appropriate use of classes and composition.
-
-**Acceptance criteria:**
-
-- Both developers can explain class and object behavior.
-- Inheritance is used only where appropriate.
-- Composition is considered before introducing unnecessary inheritance.
-- The prototype has clear responsibilities.
-
----
-
-# Phase 2 — Reliability and NumPy
-
-## Day 5 — Exception Handling and Custom Exceptions
-
-**Objective:** Handle failures safely.
-
-### Developer A
-
-Implement error handling for transaction processing.
-
-Consider:
-
-- Missing input file.
-- Malformed CSV.
-- Invalid quantity.
-- Invalid transaction date.
-- Invalid price.
-
-### Developer B
-
-Implement error handling for product processing.
-
-Consider:
-
-- Missing input file.
-- Invalid product price.
-- Missing product identifier.
-- Invalid unit cost.
-
-### Shared Task
-
-Define exception categories:
-
-- File-level errors.
-- Configuration errors.
-- Row-level data errors.
-- Validation failures.
-
-Create custom exceptions where they improve clarity.
-
-**Expected output:**
-
-Reliable scripts that distinguish recoverable row problems from fatal processing failures.
-
-**Acceptance criteria:**
-
-- Errors are not silently swallowed.
-- A bad row does not unnecessarily terminate the entire pipeline.
-- Missing input files are handled clearly.
-- Fatal errors produce meaningful messages.
-
----
-
-## Day 6 — Logging, Configuration, and Code Quality
-
-**Objective:** Make processing observable and maintainable.
-
-### Developer A
-
-Add logging to transaction processing.
-
-Log:
-
-- File loading.
-- Row counts.
-- Invalid transaction counts.
-- Processing failures.
-
-### Developer B
-
-Add logging to product processing.
-
-Log:
-
-- File loading.
-- Product counts.
-- Invalid price counts.
-- Duplicate identifiers.
-
-### Shared Task
-
-Introduce:
-
-- Python `logging`.
-- Configuration files.
-- Type hints.
-- Docstrings.
-- Basic formatting and code quality standards.
-
-**Expected output:**
-
-Scripts with consistent logging and configurable file paths.
-
-**Acceptance criteria:**
-
-- Processing events are recorded.
-- Errors include useful context.
+Supplier lead time can be analyzed as a stated supplier attribute. Without actual purchase-order and delivery-event data, the project cannot calculate a true on-time delivery rate.
+
+# 5. Project Timeline — 19 Working Days
+
+# Phase 1 — Python Foundation and Reusable Processing Framework
+
+## Day 1 — Consolidated Python Foundation
+
+**Objective:** Consolidate Python fundamentals, OOP, file handling, exception handling, logging, and configuration into a reusable foundation. This combines the original Days 1–6. The goal is not to repeat basic exercises; it is to build reusable project components.
+
+### Developer A — Transaction Processing
+
+1. Read `transactions.csv`.
+2. Create a reusable transaction reader.
+3. Validate required columns.
+4. Validate missing and invalid values.
+5. Identify duplicate transaction IDs.
+6. Preserve negative quantities as returns.
+7. Handle recoverable row-level errors.
+8. Generate transaction summaries.
+9. Record processing and validation results.
+
+### Developer B — Product Processing
+
+1. Read `products.csv`.
+2. Create a reusable product reader.
+3. Validate required columns.
+4. Validate missing and invalid values.
+5. Identify duplicate product IDs.
+6. Validate product prices and unit costs.
+7. Handle recoverable row-level errors.
+8. Generate product summaries.
+9. Record processing and validation results.
+
+### Shared Tasks
+
+Build a common foundation containing:
+
+- Reusable CSV reading functionality.
+- Common validation functions.
+- Custom exceptions.
+- Logging configuration.
+- Configuration management for file paths.
+- Type hints and docstrings.
+- A consistent processing result structure.
+- A common validation report structure.
+- Invalid-row handling and quarantine capability.
+- Unit tests for shared functionality.
+
+Apply Python concepts where they improve the implementation: functions, modules, packages, collections, comprehensions, classes, encapsulation, abstraction, inheritance and polymorphism where appropriate, composition, duck typing, exception handling, logging, `pathlib`, and type hints.
+
+### Expected Starting Architecture
+
+```text
+src/
+└── retail_bi/
+    ├── __init__.py
+    ├── config/
+    │   ├── __init__.py
+    │   └── settings.py
+    ├── ingestion/
+    │   ├── __init__.py
+    │   ├── base_reader.py
+    │   ├── transaction_reader.py
+    │   └── product_reader.py
+    ├── validation/
+    │   ├── __init__.py
+    │   ├── base_validator.py
+    │   ├── transaction_validator.py
+    │   └── product_validator.py
+    ├── exceptions/
+    │   ├── __init__.py
+    │   └── custom_exceptions.py
+    ├── reporting/
+    │   ├── __init__.py
+    │   └── validation_report.py
+    └── utils/
+        ├── __init__.py
+        └── logger.py
+
+tests/
+├── test_transaction_reader.py
+├── test_product_reader.py
+└── test_validation.py
+
+data/
+├── raw/
+├── processed/
+└── quarantine/
+
+logs/
+```
+
+This is a starting point, not a requirement to introduce unnecessary abstractions. Use inheritance only where readers genuinely share behavior. Prefer simple, composable components over an elaborate framework.
+
+### Expected Deliverables
+
+1. Reusable CSV reading mechanism.
+2. Separate transaction and product processors.
+3. Reusable validation functions.
+4. Custom exception handling.
+5. Consistent logging.
+6. Configurable file paths.
+7. Structured validation reports.
+8. Invalid-row handling and quarantine capability.
+9. Automated tests.
+10. Documentation explaining how to add another dataset.
+
+### Acceptance Criteria
+
+- Both readers run successfully.
+- Raw files remain unchanged.
+- Missing columns are detected.
+- Missing and invalid values are reported.
+- Duplicate identifiers are identified.
+- Negative quantities are preserved.
+- Recoverable row errors do not unnecessarily terminate processing.
+- Fatal file-level errors produce meaningful exceptions.
+- Logs contain useful processing information.
 - Configuration is separated from business logic.
-- Function signatures use meaningful type hints where practical.
+- Tests cover normal and failure scenarios.
+- Both developers can explain the architecture.
 
----
+**Critical extensibility test:** Add a customer reader later without copying the transaction reader and changing column names. The common framework should support the new reader with minimal duplication.
 
-## Day 7 — NumPy Fundamentals
+# Phase 2 — NumPy
+
+## Day 2 — NumPy Fundamentals
 
 **Objective:** Understand numerical computation with NumPy.
 
 ### Both Developers
 
-Study:
+Study and practice:
 
-- NumPy arrays.
-- Array creation.
-- Dimensions and shape.
-- Data types.
+- NumPy arrays, creation, dimensions, and shape.
+- Data types (`dtype`).
 - Indexing and slicing.
 - Boolean masks.
 - Vectorized operations.
@@ -562,25 +334,17 @@ Study:
 
 ### Developer A
 
-Apply NumPy to transaction quantity and price summaries.
+Apply NumPy to transaction quantities, transaction prices, quantity summaries, and numerical transaction analysis.
 
 ### Developer B
 
-Apply NumPy to product price and cost summaries.
+Apply NumPy to product prices, product costs, price summaries, and numerical product analysis.
 
-**Expected output:**
+**Expected deliverable:** Small numerical analysis modules using NumPy.
 
-Small numerical analysis modules using NumPy.
+**Acceptance criteria:** Both developers understand array shape and dtype; demonstrate vectorized operations; compare results against equivalent Python calculations; and explain when NumPy is useful versus ordinary Python.
 
-**Acceptance criteria:**
-
-- Both developers understand array shape and dtype.
-- Vectorized operations are demonstrated.
-- Results are compared against simple Python calculations.
-
----
-
-## Day 8 — Applied NumPy and Numerical Validation
+## Day 3 — Applied NumPy and Numerical Validation
 
 **Objective:** Apply NumPy to realistic data problems.
 
@@ -598,219 +362,73 @@ Small numerical analysis modules using NumPy.
 - Identify invalid numerical values.
 - Compare Python and NumPy calculations.
 
-### Shared Task
+### Shared Tasks
 
-Discuss:
+Discuss outliers versus invalid data, why an extreme value is not automatically incorrect, how numerical validation should be documented, and how NumPy results can be checked independently.
 
-- Outliers versus invalid data.
-- Why an extreme value is not automatically wrong.
-- How numerical validation should be documented.
+**Expected deliverable:** Numerical investigation reports and reusable NumPy functions.
 
-**Expected output:**
-
-Numerical investigation reports and reusable NumPy functions.
-
-**Acceptance criteria:**
-
-- Outliers are investigated rather than automatically deleted.
-- Numerical assumptions are documented.
-- Calculations are reproducible.
-
----
+**Acceptance criteria:** Outliers are investigated rather than automatically deleted; assumptions are documented; calculations are reproducible; and both developers can explain the difference between an invalid value and a valid but unusual value.
 
 # Phase 3 — Pandas and Data Engineering
 
-## Day 9 — Pandas Ingestion and Profiling
+## Day 4 — Pandas Ingestion and Profiling
 
 **Objective:** Load and inspect all datasets with Pandas.
 
-### Developer A
+- **Developer A:** Profile transactions, stores, and inventory.
+- **Developer B:** Profile products, customers, and suppliers.
+- **Shared:** Profile calendar data and agree on a common profiling format.
 
-Profile:
+For every dataset inspect shape, column names, data types, missing values, duplicate rows, unique values, and descriptive statistics.
 
-- Transactions.
-- Stores.
-- Inventory.
+**Expected deliverable:** Initial dataset profiling report covering all seven datasets.
 
-### Developer B
+**Acceptance criteria:** Every dataset loads; row and column counts are recorded; missing values are quantified; duplicates are investigated; unexpected data types are documented; and profiling is reproducible.
 
-Profile:
-
-- Products.
-- Customers.
-- Suppliers.
-
-### Shared Task
-
-Profile:
-
-- Calendar.
-
-For every dataset, inspect:
-
-- Shape.
-- Column names.
-- Data types.
-- Missing values.
-- Duplicate rows.
-- Unique values.
-- Basic descriptive statistics.
-
-**Expected output:**
-
-Initial dataset profiling report covering all seven datasets.
-
-**Acceptance criteria:**
-
-- Every dataset is loaded.
-- Row counts and column counts are recorded.
-- Missing values are quantified.
-- Duplicate records are investigated.
-- Unexpected data types are documented.
-
----
-
-## Day 10 — Data Cleaning
+## Day 5 — Data Cleaning
 
 **Objective:** Clean datasets while preserving source data.
 
-### Developer A
+- **Developer A:** Clean transactions, stores, and inventory.
+- **Developer B:** Clean products, customers, and suppliers.
+- **Shared:** Clean calendar data and agree on standards for date parsing, numeric parsing, identifier normalization, string trimming, category standardization, missing values, duplicate handling, and quarantine handling.
 
-Clean:
+**Expected deliverable:** Cleaned datasets saved separately from raw datasets.
 
-- Transactions.
-- Stores.
-- Inventory.
+**Acceptance criteria:** Raw files remain unchanged; invalid records are not silently lost; cleaning decisions are documented; original and cleaned row counts can be reconciled; negative transaction quantities are retained; and conflicting duplicate identifiers are investigated.
 
-### Developer B
-
-Clean:
-
-- Products.
-- Customers.
-- Suppliers.
-
-### Shared Task
-
-Clean calendar data and agree on common standards for:
-
-- Date parsing.
-- Numeric parsing.
-- Identifier normalization.
-- String trimming.
-- Category standardization.
-- Missing values.
-- Quarantine handling.
-
-**Expected output:**
-
-Cleaned datasets saved separately from raw datasets.
-
-**Acceptance criteria:**
-
-- Raw files remain unchanged.
-- Invalid records are not silently lost.
-- Cleaning decisions are documented.
-- Original and cleaned row counts can be reconciled.
-
----
-
-## Day 11 — Data Validation Framework
+## Day 6 — Data Validation Framework
 
 **Objective:** Build reusable validation rules.
 
-### Developer A
+- **Developer A:** Implement rules for transactions, stores, and inventory.
+- **Developer B:** Implement rules for products, customers, and suppliers.
+- **Shared:** Implement reusable checks for required fields, data types, uniqueness, nullability, numeric ranges, date validity, referential integrity, and duplicate detection.
 
-Implement validation rules for:
+**Expected deliverable:** Reusable validation framework and dataset-specific validation rules.
 
-- Transactions.
-- Stores.
-- Inventory.
+**Acceptance criteria:** Rules are separated from cleaning logic; results identify the affected dataset and field; invalid rows can be traced; results are reproducible; and developers can add rules without changing unrelated dataset logic.
 
-### Developer B
-
-Implement validation rules for:
-
-- Products.
-- Customers.
-- Suppliers.
-
-### Shared Task
-
-Implement reusable validation capabilities for:
-
-- Required fields.
-- Data types.
-- Uniqueness.
-- Nullability.
-- Numeric ranges.
-- Date validity.
-- Referential integrity.
-- Duplicate detection.
-
-**Expected output:**
-
-Reusable validation framework and dataset-specific validation rules.
-
-**Acceptance criteria:**
-
-- Rules are separated from cleaning logic.
-- Validation results identify the affected dataset and field.
-- Invalid rows can be traced.
-- Validation results are reproducible.
-
----
-
-## Day 12 — Data Integration and Joins
+## Day 7 — Data Integration and Joins
 
 **Objective:** Integrate datasets safely.
 
-### Developer A
+- **Developer A:** Join transactions with stores and calendar; investigate inventory-to-store relationships.
+- **Developer B:** Join transactions with products and customers; investigate product-to-supplier relationships.
+- **Shared:** Validate join keys, key normalization, one-to-one and one-to-many relationships, many-to-many risks, orphan records, and row counts before and after joins.
 
-- Join transactions with stores.
-- Join transactions with calendar.
-- Investigate inventory-to-store relationships.
+**Expected deliverable:** Integrated analytical datasets with documented join behavior.
 
-### Developer B
-
-- Join transactions with products.
-- Join transactions with customers.
-- Investigate product-to-supplier relationships.
-
-### Shared Task
-
-Validate:
-
-- Join keys.
-- Key normalization.
-- One-to-one relationships.
-- One-to-many relationships.
-- Many-to-many risks.
-- Orphan records.
-- Row counts before and after joins.
-
-**Expected output:**
-
-Integrated analytical datasets with documented join behavior.
-
-**Acceptance criteria:**
-
-- No accidental many-to-many multiplication.
-- Join cardinality is checked.
-- Orphan records are reported.
-- Joined row counts are explained.
-
----
+**Acceptance criteria:** No accidental many-to-many multiplication; join cardinality is checked; orphan records are reported; joined row counts are explained; historical transaction prices are preserved; and both developers can explain the join strategy.
 
 # Phase 4 — Retail Business Analytics
 
-## Day 13 — Sales and Business Metrics
+## Day 8 — Sales and Business Metrics
 
 **Objective:** Calculate core retail metrics.
 
 ### Developer A
-
-Implement:
 
 - Total transaction line count.
 - Distinct order count.
@@ -823,485 +441,158 @@ Implement:
 
 ### Developer B
 
-Support:
-
 - Sales by product.
 - Sales by category.
 - Product performance.
 - Customer purchase summaries.
 
-### Shared Task
+### Shared Tasks
 
-Create a metric dictionary containing:
+Create a metric dictionary containing metric name, business definition, formula, required columns, assumptions, and known limitations.
 
-- Metric name.
-- Business definition.
-- Formula.
-- Required columns.
-- Assumptions.
-- Known limitations.
+**Expected deliverable:** Sales analytics module and metric dictionary.
 
-**Expected output:**
+**Acceptance criteria:** Formulas are documented; distinct orders are not confused with transaction lines; returns are handled consistently; AOV is calculated only when order identifiers are validated; and metrics reconcile against independently calculated sample results.
 
-Sales analytics module and metric dictionary.
-
-**Acceptance criteria:**
-
-- Formulas are documented.
-- Distinct orders are not confused with transaction lines.
-- Returns are handled consistently.
-- AOV is calculated only when order identifiers are validated.
-
----
-
-## Day 14 — Profitability and Customer Analytics
+## Day 9 — Profitability and Customer Analytics
 
 **Objective:** Analyze estimated profitability and customer behavior.
 
-### Developer A
+- **Developer A:** Calculate estimated gross profit, estimated gross margin, store-level profitability, and product-level profitability.
+- **Developer B:** Analyze customer purchase frequency, customer net sales, customer segmentation, and customer contribution to sales.
+- **Shared:** Review metric definitions, validate financial calculations, document assumptions and limitations, and review segmentation rules.
 
-Calculate:
+**Expected deliverable:** Profitability and customer analytics modules.
 
-- Estimated gross profit.
-- Estimated gross margin.
-- Store-level profitability.
-- Product-level profitability.
+**Acceptance criteria:** Cost calculations use transaction quantities and available product cost; estimated gross profit is clearly labelled; missing costs are not silently treated as zero; unsupported customer lifetime value claims are avoided; and segmentation rules are documented and reproducible.
 
-### Developer B
-
-Analyze:
-
-- Customer purchase frequency.
-- Customer net sales.
-- Customer segmentation.
-- Customer contribution to sales.
-
-### Shared Task
-
-Review metric definitions and assumptions.
-
-**Expected output:**
-
-Profitability and customer analytics modules.
-
-**Acceptance criteria:**
-
-- Cost calculations use the appropriate historical transaction quantity and available product cost.
-- Estimated gross profit is clearly labelled.
-- Unsupported customer lifetime value claims are avoided.
-- Customer segmentation rules are documented.
-
----
-
-## Day 15 — Inventory and Supplier Analytics
+## Day 10 — Inventory and Supplier Analytics
 
 **Objective:** Analyze inventory snapshots and supplier attributes.
 
-### Developer A
+- **Developer A:** Analyze inventory by store and product, quarterly stock changes, negative or invalid stock records, and products with low recorded stock.
+- **Developer B:** Analyze supplier lead time, products by supplier, supplier catalog coverage, and missing supplier attributes.
+- **Shared:** Document data limitations, validate inventory and supplier relationships, define appropriate summary metrics, and review calculations.
 
-Analyze:
+**Expected deliverable:** Inventory and supplier analytics modules.
 
-- Inventory by store.
-- Inventory by product.
-- Quarterly stock changes.
-- Negative or invalid stock records.
-- Products with low recorded stock.
-
-### Developer B
-
-Analyze:
-
-- Supplier lead time.
-- Products by supplier.
-- Supplier catalog coverage.
-- Missing supplier attributes.
-
-### Shared Task
-
-Document data limitations.
-
-**Expected output:**
-
-Inventory and supplier analytics modules.
-
-**Acceptance criteria:**
-
-- Inventory is described as quarterly snapshot data.
-- Stock comparisons use comparable snapshots.
-- Supplier lead time is not presented as actual delivery performance.
-- Invalid records are accounted for.
-
----
+**Acceptance criteria:** Inventory is described as quarterly snapshot data; stock comparisons use comparable snapshots; supplier lead time is not presented as actual delivery performance; invalid records are accounted for; and no live-stock or unsupported restocking claims are made.
 
 # Phase 5 — Data Visualization
 
-## Day 16 — Matplotlib
+## Day 11 — Matplotlib
 
 **Objective:** Create meaningful static visualizations.
 
-### Developer A
+- **Developer A:** Sales trend, store sales comparison, return analysis, and sales distribution.
+- **Developer B:** Product category comparison, top products, customer contribution, and product price distribution.
+- **Shared:** Agree on chart naming, units, labels, titles, reusable visualization conventions, and output directory structure.
 
-Create:
+**Expected deliverable:** Matplotlib charts saved under the reports directory.
 
-- Sales trend chart.
-- Store sales comparison.
-- Return analysis.
-- Sales distribution.
+**Acceptance criteria:** Every chart has a meaningful title and labelled axes; units are clear; aggregation levels are correct; and charts use analytical outputs rather than hardcoded values.
 
-### Developer B
+## Day 12 — Seaborn and Insight Development
 
-Create:
+**Objective:** Develop advanced visualizations and communicate findings.
 
-- Product category comparison.
-- Top products.
-- Customer contribution.
-- Product price distribution.
+- **Developer A:** Create store and sales visualizations.
+- **Developer B:** Create product and customer visualizations.
+- **Shared:** Use Seaborn for appropriate distributions, category comparisons, correlation heatmaps, and analytical plots. Write business observations for major charts.
 
-### Shared Task
+**Expected deliverable:** Visualization report containing charts and written observations.
 
-Agree on chart naming, units, labels, titles, and reusable visualization conventions.
-
-**Expected output:**
-
-A collection of Matplotlib charts saved under the reports directory.
-
-**Acceptance criteria:**
-
-- Every chart has a meaningful title.
-- Axes are labelled.
-- Units are clear.
-- Charts use the correct aggregation level.
-
----
-
-## Day 17 — Seaborn and Insight Development
-
-**Objective:** Develop more advanced visualizations and communicate findings.
-
-### Developer A
-
-Create store and sales visualizations.
-
-### Developer B
-
-Create product and customer visualizations.
-
-### Shared Task
-
-Use Seaborn for appropriate:
-
-- Distributions.
-- Category comparisons.
-- Correlation heatmaps.
-- Analytical plots.
-
-Write business observations for each major chart.
-
-**Expected output:**
-
-Visualization report containing charts and written observations.
-
-**Acceptance criteria:**
-
-- Visualizations answer defined business questions.
-- Correlation is not described as causation.
-- Observations are supported by calculated data.
-- Charts are readable.
-
----
+**Acceptance criteria:** Visualizations answer defined business questions; correlation is not described as causation; observations are supported by calculated data; charts are readable; and major observations include relevant metrics or evidence.
 
 # Phase 6 — Testing and Git Collaboration
 
-## Day 18 — Unit and Integration Testing
+## Day 13 — Unit and Integration Testing
 
 **Objective:** Test the application systematically.
 
-### Developer A
+- **Developer A:** Test transaction ingestion, transaction validation, sales calculations, and inventory analytics.
+- **Developer B:** Test product ingestion, product validation, customer analytics, and supplier analytics.
+- **Shared:** Use Pytest fixtures, parameterized tests, edge cases, integration tests, and error-handling tests.
 
-Write tests for:
+**Expected deliverable:** Automated test suite.
 
-- Transaction ingestion.
-- Transaction validation.
-- Sales calculations.
-- Inventory analytics.
+**Acceptance criteria:** Core business calculations have tests; invalid inputs and expected exceptions are tested; tests run from the project root; tests do not depend on machine-specific paths; and critical edge cases are covered.
 
-### Developer B
-
-Write tests for:
-
-- Product ingestion.
-- Product validation.
-- Customer analytics.
-- Supplier analytics.
-
-### Shared Task
-
-Use Pytest for:
-
-- Fixtures.
-- Parameterized tests.
-- Edge cases.
-- Integration tests.
-- Error handling tests.
-
-**Expected output:**
-
-Automated test suite.
-
-**Acceptance criteria:**
-
-- Core business calculations have tests.
-- Invalid inputs are tested.
-- Expected exceptions are tested.
-- Tests can run from the project root.
-
----
-
-## Day 19 — Git and Team Integration
+## Day 14 — Git and Team Integration
 
 **Objective:** Establish a professional collaboration workflow.
 
-### Both Developers
+Both developers practice branch creation, meaningful commits, pull requests, code reviews, merging, conflict resolution, and reverting changes.
 
-Practice:
+**Shared tasks:** Integrate completed modules, review shared module changes, resolve integration issues, and confirm that the main branch remains runnable.
 
-- Branch creation.
-- Meaningful commits.
-- Pull requests.
-- Code reviews.
-- Merging.
-- Conflict resolution.
-- Reverting changes.
+**Expected deliverable:** Integrated codebase with reviewed changes.
 
-### Shared Task
-
-Integrate all completed modules.
-
-**Expected output:**
-
-Integrated codebase with reviewed changes.
-
-**Acceptance criteria:**
-
-- Both developers use separate working branches.
-- Changes are reviewed before merging.
-- Main branch remains runnable.
-- Integration issues are recorded and resolved.
-
----
+**Acceptance criteria:** Developers use separate working branches; changes are reviewed before merging; main remains runnable; integration issues are recorded and resolved; and unreviewed changes are not merged into main.
 
 # Phase 7 — Application Architecture and Dashboard
 
-## Day 20 — Application Architecture
+## Day 15 — Application Architecture
 
 **Objective:** Organize the project into maintainable layers.
 
-### Developer A
+- **Developer A:** Prepare sales, store, and inventory services.
+- **Developer B:** Prepare product, customer, and supplier services.
+- **Shared:** Define ingestion, validation, cleaning, model, analytics, service, visualization, and application layers.
 
-Prepare sales and inventory services.
+**Expected deliverable:** Integrated application architecture with clear module responsibilities.
 
-### Developer B
+**Acceptance criteria:** Business logic is separate from UI logic; modules have clear responsibilities; dependencies are understandable; application services can be called independently of Streamlit; and shared functionality is not unnecessarily duplicated.
 
-Prepare product, customer, and supplier services.
+## Day 16 — Streamlit Dashboard Foundation
 
-### Shared Task
+**Objective:** Build the interactive dashboard foundation.
 
-Define:
+- **Developer A:** Build the Sales page.
+- **Developer B:** Build Product and Customer pages.
+- **Shared:** Build application entry point, sidebar navigation, dashboard layout, shared filters, common KPI components, Executive Overview, and Data Quality page.
 
-- Ingestion layer.
-- Validation layer.
-- Cleaning layer.
-- Model layer.
-- Analytics layer.
-- Service layer.
-- Visualization layer.
-- Application layer.
+**Expected deliverable:** Working Streamlit dashboard with the first core pages.
 
-**Expected output:**
+**Acceptance criteria:** Application starts successfully; navigation works; filters affect relevant charts and metrics; UI contains no duplicated business logic; and empty or invalid data states are handled clearly.
 
-Integrated application architecture with clear module responsibilities.
-
-**Acceptance criteria:**
-
-- Business logic is separate from UI logic.
-- Modules have clear responsibilities.
-- Dependencies are understandable.
-- Application services can be called independently of Streamlit.
-
----
-
-## Day 21 — Streamlit Dashboard Foundation
-
-**Objective:** Build the interactive dashboard.
-
-### Developer A
-
-Build the Sales page.
-
-### Developer B
-
-Build the Product and Customer pages.
-
-### Shared Task
-
-Build:
-
-- Application entry point.
-- Sidebar navigation.
-- Dashboard layout.
-- Shared filters.
-- Common KPI components.
-- Executive Overview.
-- Data Quality page.
-
-**Expected output:**
-
-A working Streamlit dashboard with the first core pages.
-
-**Acceptance criteria:**
-
-- Application starts successfully.
-- Navigation works.
-- Filters affect relevant charts and metrics.
-- UI does not contain duplicated business logic.
-
----
-
-## Day 22 — Complete Dashboard and Export Features
+## Day 17 — Complete Dashboard and Export Features
 
 **Objective:** Complete dashboard functionality.
 
-### Developer A
+- **Developer A:** Build Store and Inventory pages.
+- **Developer B:** Build Supplier analytics and Product/Customer drill-downs.
+- **Shared:** Implement date, store, and relevant product/category filters; data exports; data quality summary; and inventory snapshot freshness labels.
 
-Build:
+**Expected deliverable:** Complete dashboard with all agreed pages.
 
-- Store page.
-- Inventory page.
-
-### Developer B
-
-Build:
-
-- Supplier analytics.
-- Product and customer drill-downs.
-
-### Shared Task
-
-Implement:
-
-- Date filters.
-- Store filters.
-- Product/category filters where appropriate.
-- Data exports.
-- Data quality summary.
-- Inventory snapshot freshness labels.
-
-**Expected output:**
-
-Complete dashboard with all agreed pages.
-
-**Acceptance criteria:**
-
-- All seven dashboard pages are accessible.
-- Filters behave consistently.
-- Exported data matches the selected filters.
-- Inventory dates are clearly displayed.
-- Unsupported metrics are not presented.
-
----
+**Acceptance criteria:** All seven dashboard pages are accessible; filters behave consistently; exported data matches selected filters; inventory dates are clearly displayed; unsupported metrics are not presented; and dashboard calculations use the analytics layer.
 
 # Phase 8 — Quality Assurance and Delivery
 
-## Day 23 — End-to-End QA
+## Day 18 — End-to-End QA
 
 **Objective:** Validate the entire system.
 
-### Developer A
+- **Developer A:** Validate transactions, sales metrics, stores, and inventory.
+- **Developer B:** Validate products, customers, and suppliers.
+- **Shared:** Perform end-to-end pipeline testing, regression testing, data reconciliation, fresh environment setup, documentation review, and known limitation review.
 
-Validate:
+**Expected deliverable:** QA report and release candidate.
 
-- Transactions.
-- Sales metrics.
-- Stores.
-- Inventory.
+**Acceptance criteria:** Pipeline runs from raw data to dashboard; row counts are reconciled; critical metrics are checked independently; no unresolved critical defects remain; setup instructions work in a fresh environment; and data quality issues are visible and accounted for.
 
-### Developer B
-
-Validate:
-
-- Products.
-- Customers.
-- Suppliers.
-
-### Shared Task
-
-Perform:
-
-- End-to-end pipeline testing.
-- Regression testing.
-- Data reconciliation.
-- Fresh environment setup.
-- Documentation review.
-- Known limitation review.
-
-**Expected output:**
-
-QA report and release candidate.
-
-**Acceptance criteria:**
-
-- Pipeline runs from raw data to dashboard.
-- Row counts are reconciled.
-- Critical metrics are checked independently.
-- No unresolved critical defects remain.
-- Setup instructions work in a fresh environment.
-
----
-
-## Day 24 — Final Demonstration and Handover
+## Day 19 — Final Demonstration and Handover
 
 **Objective:** Deliver the completed project.
 
-### Developer A
+- **Developer A:** Demonstrate transaction processing, sales analytics, store analytics, and inventory analytics.
+- **Developer B:** Demonstrate product analytics, customer analytics, and supplier analytics.
+- **Shared:** Demonstrate the complete dashboard; explain architecture, validation framework, business metrics, and limitations; complete README; and tag the release.
 
-Demonstrate:
+**Expected deliverable:** Final Retail Business Intelligence Platform release.
 
-- Transaction processing.
-- Sales analytics.
-- Store analytics.
-- Inventory analytics.
-
-### Developer B
-
-Demonstrate:
-
-- Product analytics.
-- Customer analytics.
-- Supplier analytics.
-
-### Shared Task
-
-- Demonstrate complete dashboard.
-- Explain architecture.
-- Explain validation framework.
-- Explain major business metrics.
-- Review limitations.
-- Complete README.
-- Tag the release.
-
-**Expected output:**
-
-Final Retail Business Intelligence Platform release.
-
-**Acceptance criteria:**
-
-- Both developers can run the application.
-- Both developers can explain the full architecture.
-- Both developers can explain major business rules.
-- Documentation is complete.
-- Final code is committed and tagged.
-
----
+**Acceptance criteria:** Both developers can run the application, explain the full architecture and major business rules, documentation is complete, final code is committed and tagged, and both developers can independently demonstrate the application.
 
 # 6. Target Repository Structure
 
@@ -1314,17 +605,20 @@ retail-business-intelligence-platform/
 │   └── quarantine/
 │
 ├── reports/
-│
 ├── notebooks/
 │
 ├── src/
 │   └── retail_bi/
+│       ├── config/
 │       ├── ingestion/
 │       ├── validation/
 │       ├── cleaning/
+│       ├── exceptions/
+│       ├── reporting/
 │       ├── models/
 │       ├── analytics/
 │       ├── services/
+│       ├── utils/
 │       └── visualization/
 │
 ├── app/
@@ -1332,15 +626,12 @@ retail-business-intelligence-platform/
 │   └── components/
 │
 ├── tests/
-│
 ├── docs/
-│
+├── logs/
 ├── requirements.txt
 ├── README.md
 └── .gitignore
 ```
-
-## Folder Responsibilities
 
 | Folder | Responsibility |
 |---|---|
@@ -1349,28 +640,33 @@ retail-business-intelligence-platform/
 | `data/quarantine` | Rejected or problematic records |
 | `reports` | Generated charts and reports |
 | `notebooks` | Exploration and experimentation |
+| `config` | Application and file path configuration |
 | `ingestion` | Reading input datasets |
 | `validation` | Data quality rules |
 | `cleaning` | Data cleaning operations |
+| `exceptions` | Custom exceptions |
+| `reporting` | Validation and processing reports |
 | `models` | Data structures and domain models |
 | `analytics` | Business metrics and analysis |
 | `services` | Application-level orchestration |
+| `utils` | Shared utilities such as logging |
 | `visualization` | Reusable chart generation |
 | `app` | Streamlit application |
 | `tests` | Automated tests |
 | `docs` | Technical and business documentation |
+| `logs` | Application logs |
 
----
+The structure should evolve as the application grows. Do not create empty modules or unnecessary layers merely to match the proposed structure.
 
 # 7. Final Dashboard Scope
 
-The final dashboard will contain seven pages.
+The final dashboard contains seven pages.
 
 ## 1. Executive Overview
 
 - Total net sales.
 - Total orders.
-- Total units sold, with return treatment documented.
+- Total signed quantity, with return treatment documented.
 - Estimated gross profit.
 - Sales trend.
 - Store performance.
@@ -1426,11 +722,9 @@ The final dashboard will contain seven pages.
 - Quarantined records.
 - Validation summary.
 
----
-
 # 8. Daily Working Process
 
-Every working day must follow this process.
+Every working day follows this process:
 
 1. Review the day's learning objective.
 2. Complete individual assignments independently.
@@ -1453,22 +747,9 @@ Use these statuses:
 - `Blocked`
 - `Done`
 
-A day is not complete merely because code has been written.
-
-It is complete when:
-
-- The assignment is implemented.
-- Expected output is produced.
-- Tests pass.
-- Code review is complete.
-- Shared work is integrated.
-- Acceptance criteria are met.
-
----
+A day is not complete merely because code has been written. It is complete when the assignment is implemented, expected output is produced, tests pass, code review is complete, shared work is integrated, and acceptance criteria are met.
 
 # 9. Definition of Done
-
-The overall project is considered complete when all the following are true.
 
 ## Data Engineering
 
@@ -1522,11 +803,7 @@ The overall project is considered complete when all the following are true.
 - [ ] Both developers can explain data quality decisions.
 - [ ] Both developers can demonstrate the dashboard.
 
----
-
 # 10. Technical Learning Checklist
-
-By the end of the project, both developers should be comfortable with:
 
 ## Python
 
@@ -1603,8 +880,6 @@ By the end of the project, both developers should be comfortable with:
 - [ ] Data exports.
 - [ ] Error and empty-state handling.
 
----
-
 # 11. Important Project Principles
 
 1. Understand before implementing.
@@ -1619,29 +894,35 @@ By the end of the project, both developers should be comfortable with:
 10. Do not mark a task complete without evidence.
 11. Both developers must understand the complete application.
 12. Code quality and correctness are more important than finishing quickly.
-
----
+13. Avoid unnecessary abstractions; build only what the project needs.
+14. Every reusable component must have a clear reason to exist.
 
 # 12. Final Deliverables
 
-At the end of the 24-day project, the team should have:
+At the end of the 19-day project, the team should have:
 
 1. Complete Python source code.
 2. Seven-dataset ingestion pipeline.
-3. Data profiling report.
-4. Data validation framework.
-5. Data cleaning pipeline.
-6. Quarantine outputs.
-7. Integrated analytical datasets.
-8. Retail business metrics.
-9. Inventory and supplier analytics.
-10. Matplotlib and Seaborn visualizations.
-11. Streamlit dashboard.
-12. Automated tests.
-13. Git repository with meaningful commit history.
-14. README and technical documentation.
-15. Final QA report.
-16. Final project demonstration.
+3. Reusable processing and validation foundation.
+4. Data profiling report.
+5. Data validation framework.
+6. Data cleaning pipeline.
+7. Quarantine outputs.
+8. Integrated analytical datasets.
+9. Retail business metrics.
+10. Inventory and supplier analytics.
+11. Matplotlib and Seaborn visualizations.
+12. Streamlit dashboard.
+13. Automated tests.
+14. Git repository with meaningful commit history.
+15. README and technical documentation.
+16. Final QA report.
+17. Final project demonstration.
 
 **Final goal:** Both developers should be able to independently explain, run, test, and extend the Retail Business Intelligence Platform—not merely demonstrate code written during the project.
 
+# 13. Schedule and Scope Note
+
+The original 24-day plan has been consolidated into 19 working days by combining the original Days 1–6 into one intensive foundation day. This is a compressed schedule, not a reduction in engineering expectations. Day 1 is deliberately focused on producing reusable components that support the remaining work.
+
+If the foundation is not reusable, or if acceptance criteria are not met, spend additional time fixing it rather than carrying technical debt into the Pandas and analytics phases.
