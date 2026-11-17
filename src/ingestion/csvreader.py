@@ -7,7 +7,7 @@ logger = logging.getLogger(__name__)
 class CSVReader:
     
     # Constructor to initialize the csvreader object with the filename and read the CSV data.
-    def __init__(self,file_path):
+    def __init__(self,file_path : Path):
         #self.file_path = Path("data") / "raw" / filename
         self.file_path = file_path
         if not self.file_path.exists():
@@ -15,7 +15,7 @@ class CSVReader:
         self.data = []
            
     # read csv file and store data in list of dictionaries.    
-    def read_csv(self):
+    def read_csv(self)  -> list[dict[str, str]]: 
         logger.info(f"Reading CSV file: {self.file_path}")
         self.data = []
         with self.file_path.open(mode="r",encoding="utf-8-sig",newline="") as file:
@@ -25,6 +25,6 @@ class CSVReader:
         return self.data    
    
     #Count total rows.
-    def get_total_rows(self):
+    def get_total_rows(self) -> int:
         return len(self.data)
     
